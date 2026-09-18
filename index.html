@@ -3,14 +3,12 @@
 
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport"
-      content="width=device-width,
-               initial-scale=1.0,
+      content="width=device-width, initial-scale=1.0,
                maximum-scale=1.0,
                user-scalable=no">
 
-<title>أبو فيصل IPTV</title>
+<title>azaam</title>
 
 <style>
 
@@ -19,9 +17,9 @@
 ===================================================== */
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html,
@@ -29,555 +27,193 @@ body{
     width:100%;
     height:100%;
     overflow:hidden;
-    background:#030609;
 }
 
-
-/* =====================================================
-   MAIN
-===================================================== */
-
-.page{
-
-    position:relative;
-
-    width:100vw;
-    height:100dvh;
-
-    overflow:hidden;
-
-    background:#030609;
-}
-
-
-/* =====================================================
-   THE EXACT DESIGN IMAGE
-===================================================== */
-
-.design{
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    width:100vw;
-    height:100vh;
-
-    transform:
-        translate(-50%,-50%);
-
-    background-image:
-        url("1000560240.png");
-
-    background-repeat:no-repeat;
-
-    background-position:center center;
-
-    background-size:
-        100% 100%;
-}
-
-
-/* =====================================================
-   INVISIBLE CLICK AREAS
-   فوق التصميم الأصلي بدون تغيير شكله
-===================================================== */
-
-.hotspot{
-
-    position:absolute;
-
-    display:block;
-
-    z-index:10;
-
-    background:transparent;
-
-    border:none;
-
-    outline:none;
-
-    cursor:pointer;
-
-    -webkit-tap-highlight-color:
-        transparent;
-}
-
-
-/* =====================================================
-   SUBSCRIBE BUTTON
-===================================================== */
-
-.subscribe{
-
-    top:1.2%;
-
-    left:4%;
-
-    width:30%;
-
-    height:5.3%;
-}
-
-
-/* =====================================================
-   WHATSAPP BUTTON
-===================================================== */
-
-.whatsapp{
-
-    top:25.5%;
-
-    left:21%;
-
-    width:58%;
-
-    height:6%;
-}
-
-
-/* =====================================================
-   FOUR GLASS CARDS
-===================================================== */
-
-.movies{
-
-    top:33.3%;
-
-    right:52%;
-
-    width:43%;
-
-    height:14.5%;
-}
-
-
-.series{
-
-    top:33.3%;
-
-    left:5%;
-
-    width:43%;
-
-    height:14.5%;
-}
-
-
-.matches{
-
-    top:47.2%;
-
-    right:52%;
-
-    width:43%;
-
-    height:14.5%;
-}
-
-
-.channels{
-
-    top:47.2%;
-
-    left:5%;
-
-    width:43%;
-
-    height:14.5%;
-}
-
-
-/* =====================================================
-   COPY NUMBER BUTTON
-===================================================== */
-
-.copy{
-
-    top:65.7%;
-
-    left:53%;
-
-    width:31%;
-
-    height:6.5%;
-}
-
-
-/* =====================================================
-   COPY MESSAGE
-===================================================== */
-
-.message{
-
-    position:absolute;
-
-    z-index:20;
-
-    top:72.7%;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    width:55%;
-
-    text-align:center;
-
-    color:#77e08b;
-
+body{
     font-family:
         Tahoma,
         Arial,
         sans-serif;
 
-    font-size:
-        clamp(
-            9px,
-            2vw,
-            15px
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(190,140,50,.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(190,140,50,.08),
+            transparent 30%
+        ),
+        #030609;
+
+    color:white;
+}
+
+
+/* =====================================================
+   MAIN SCREEN
+===================================================== */
+
+.page{
+    width:100%;
+    height:100dvh;
+    min-height:500px;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+
+/* =====================================================
+   CINEMATIC BACKGROUND
+===================================================== */
+
+.page::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2,5,8,.55),
+            rgba(2,5,8,.78)
+        ),
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(230,180,90,.18),
+            transparent 60%
         );
+
+    filter:saturate(.8);
+
+    opacity:.85;
+
+    z-index:-3;
+}
+
+
+.page::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            transparent 15%,
+            rgba(0,0,0,.55) 75%
+        );
+
+    z-index:-2;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    width:94%;
+    height:72px;
+
+    margin:10px auto 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:7px 12px;
+
+    border-radius:38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.035)
+        );
+
+    border:1px solid rgba(224,174,78,.65);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 10px 35px rgba(0,0,0,.45),
+        0 0 20px rgba(214,166,73,.10);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    flex-shrink:0;
+}
+
+
+/* LOGO */
+
+.brand{
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    color:#edc875;
 
     font-weight:bold;
 
-    opacity:0;
-
-    transition:
-        opacity .3s ease;
-
-    pointer-events:none;
-
-    text-shadow:
-        0 2px 8px #000;
+    font-size:18px;
 }
 
+.brand .logo-circle{
 
-/* =====================================================
-   MESSAGE SHOW
-===================================================== */
+    width:52px;
+    height:52px;
 
-.message.show{
+    border-radius:50%;
 
-    opacity:1;
-}
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-
-/* =====================================================
-   SMALL SCREEN
-===================================================== */
-
-@media(max-width:500px){
-
-    .design{
-
-        width:100vw;
-        height:100dvh;
-
-        background-size:
-            100% 100%;
-    }
-
-}
-
-
-/* =====================================================
-   VERY SMALL HEIGHT
-===================================================== */
-
-@media(max-height:650px){
-
-    .design{
-
-        width:100vw;
-        height:100dvh;
-
-        background-size:
-            100% 100%;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="page">
-
-
-    <!-- =================================================
-         التصميم الكامل
-    ================================================= -->
-
-    <div class="design"></div>
-
-
-
-    <!-- =================================================
-         زر اشترك الآن
-    ================================================= -->
-
-    <a
-        class="hotspot subscribe"
-
-        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
-
-        target="_blank"
-
-        aria-label="اشترك الآن"
-    ></a>
-
-
-
-    <!-- =================================================
-         واتساب
-    ================================================= -->
-
-    <a
-        class="hotspot whatsapp"
-
-        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
-
-        target="_blank"
-
-        aria-label="تواصل معنا عبر واتساب"
-    ></a>
-
-
-
-    <!-- =================================================
-         أفلام
-    ================================================= -->
-
-    <a
-        class="hotspot movies"
-
-        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
-
-        target="_blank"
-
-        aria-label="أفلام"
-    ></a>
-
-
-
-    <!-- =================================================
-         مسلسلات
-    ================================================= -->
-
-    <a
-        class="hotspot series"
-
-        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
-
-        target="_blank"
-
-        aria-label="مسلسلات"
-    ></a>
-
-
-
-    <!-- =================================================
-         مباريات
-    ================================================= -->
-
-    <a
-        class="hotspot matches"
-
-        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
-
-        target="_blank"
-
-        aria-label="مباريات"
-    ></a>
-
-
-
-    <!-- =================================================
-         قنوات
-    ================================================= -->
-
-    <a
-        class="hotspot channels"
-
-        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
-
-        target="_blank"
-
-        aria-label="قنوات"
-    ></a>
-
-
-
-    <!-- =================================================
-         نسخ رقم التواصل
-    ================================================= -->
-
-    <button
-        class="hotspot copy"
-
-        onclick="copyNumber()"
-
-        aria-label="نسخ رقم التواصل"
-    ></button>
-
-
-
-    <!-- =================================================
-         رسالة النسخ
-    ================================================= -->
-
-    <div
-        id="message"
-        class="message"
-    >
-        ✓ تم نسخ رقم التواصل بنجاح
-    </div>
-
-
-</div>
-
-
-
-<script>
-
-/* =====================================================
-   رقم التواصل
-===================================================== */
-
-const phoneNumber =
-    "966575242678";
-
-
-/* =====================================================
-   نسخ الرقم
-===================================================== */
-
-function copyNumber(){
-
-    const message =
-        document.getElementById("message");
-
-
-    /* الطريقة الحديثة */
-
-    if(
-        navigator.clipboard &&
-        window.isSecureContext
-    ){
-
-        navigator.clipboard
-        .writeText(phoneNumber)
-        .then(function(){
-
-            showMessage();
-
-        })
-        .catch(function(){
-
-            fallbackCopy();
-
-        });
-
-    }
-
-    else{
-
-        fallbackCopy();
-
-    }
-
-}
-
-
-/* =====================================================
-   طريقة احتياطية للنسخ
-===================================================== */
-
-function fallbackCopy(){
-
-    const input =
-        document.createElement("input");
-
-    input.value =
-        phoneNumber;
-
-    input.style.position =
-        "fixed";
-
-    input.style.left =
-        "-9999px";
-
-    document.body.appendChild(input);
-
-    input.select();
-
-    input.setSelectionRange(
-        0,
-        99999
-    );
-
-    try{
-
-        document.execCommand(
-            "copy"
+    background:
+        linear-gradient(
+            135deg,
+            #f4cd7e,
+            #8f6224
         );
 
-        showMessage();
+    border:2px solid #d9aa55;
 
-    }
+    box-shadow:
+        0 0 12px rgba(231,184,91,.5),
+        inset 0 0 10px rgba(255,255,255,.15);
 
-    catch(error){
-
-        alert(
-            "رقم التواصل: " +
-            phoneNumber
-        );
-
-    }
-
-    document.body.removeChild(input);
-
+    font-size:20px;
+    font-weight:900;
+    color:#1c1206;
 }
 
+.brand small{
 
-/* =====================================================
-   إظهار رسالة نجاح النسخ
-===================================================== */
+    display:block;
 
-function showMessage(){
+    font-size:9px;
 
-    const message =
-        document.getElementById(
-            "message"
-        );
+    color:#e6bd72;
 
-    message.classList.add(
-        "show"
-    );
+    letter-spacing:2px;
 
-
-    setTimeout(function(){
-
-        message.classList.remove(
-            "show"
-        );
-
-    },2500);
-
+    text-align:center;
 }
-
-</script>
-
-
-</body>
-
-</html>
 
 
 /* NAV */
@@ -856,7 +492,7 @@ nav a:hover{
 }
 
 
-/* CARD IMAGE */
+/* CARD ICON BACKDROP */
 
 .card-image{
 
@@ -864,11 +500,15 @@ nav a:hover{
 
     inset:0;
 
-    background-size:cover;
+    display:flex;
 
-    background-position:center;
+    align-items:center;
 
-    opacity:.72;
+    justify-content:center;
+
+    font-size:56px;
+
+    opacity:.5;
 
     filter:saturate(.9);
 
@@ -949,35 +589,6 @@ nav a:hover{
 
     text-shadow:
         0 2px 8px #000;
-}
-
-
-/* =====================================================
-   IMAGES
-===================================================== */
-
-.movies{
-
-    background-image:
-        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=85");
-}
-
-.series{
-
-    background-image:
-        url("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=800&q=85");
-}
-
-.matches{
-
-    background-image:
-        url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=85");
-}
-
-.channels{
-
-    background-image:
-        url("https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=85");
 }
 
 
@@ -1193,7 +804,7 @@ footer{
     }
 
 
-    .brand img{
+    .brand .logo-circle{
 
         width:48px;
         height:48px;
@@ -1323,7 +934,7 @@ footer{
         height:57px;
     }
 
-    .brand img{
+    .brand .logo-circle{
         width:43px;
         height:43px;
     }
@@ -1375,25 +986,22 @@ footer{
 <div class="page">
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header>
 
     <div class="brand">
 
-        <img
-            src="1000173567.jpg"
-            alt="أبو فيصل IPTV"
-        >
+        <div class="logo-circle">
+            A
+        </div>
 
         <div>
 
-            أبو فيصل
+            azaam
 
             <small>
-                IPTV
+                STORE
             </small>
 
         </div>
@@ -1408,7 +1016,7 @@ footer{
         </a>
 
         <a href="#features">
-            المميزات
+            المنتجات
         </a>
 
         <a href="#copy">
@@ -1418,9 +1026,9 @@ footer{
     </nav>
 
 
-    <a
+    
         class="buy"
-        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
+        href="https://wa.me/966500000000?text=السلام%20عليكم،%20أبغى%20أطلب"
         target="_blank"
     >
 
@@ -1432,9 +1040,7 @@ footer{
 
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section
     class="hero"
@@ -1446,10 +1052,10 @@ footer{
 
         <h1>
 
-            أبو فيصل
+            azaam
 
             <span>
-                IPTV
+                STORE
             </span>
 
         </h1>
@@ -1457,7 +1063,7 @@ footer{
 
         <p>
 
-            كل احتياجاتك الترفيهية تجدها هنا
+            كل احتياجاتك التقنية تجدها هنا
 
             <br>
 
@@ -1466,9 +1072,9 @@ footer{
         </p>
 
 
-        <a
+        
             class="hero-btn"
-            href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
+            href="https://wa.me/966500000000?text=السلام%20عليكم،%20أبغى%20أطلب"
             target="_blank"
         >
 
@@ -1484,9 +1090,7 @@ footer{
 
 
 
-<!-- =====================================================
-     GLASS CATEGORIES
-===================================================== -->
+<!-- GLASS CATEGORIES -->
 
 <section
     class="features"
@@ -1494,22 +1098,18 @@ footer{
 >
 
 
-    <!-- أفلام -->
-
     <div class="glass-card">
 
-        <div
-            class="card-image movies">
+        <div class="card-image">
+            📱
         </div>
 
-        <div
-            class="card-overlay">
-        </div>
+        <div class="card-overlay"></div>
 
         <div class="card-content">
 
             <h3>
-                أفلام
+                جوالات
             </h3>
 
             <p>
@@ -1522,26 +1122,22 @@ footer{
 
 
 
-    <!-- مسلسلات -->
-
     <div class="glass-card">
 
-        <div
-            class="card-image series">
+        <div class="card-image">
+            🎧
         </div>
 
-        <div
-            class="card-overlay">
-        </div>
+        <div class="card-overlay"></div>
 
         <div class="card-content">
 
             <h3>
-                مسلسلات
+                سماعات
             </h3>
 
             <p>
-                مكتبة ضخمة ومتجددة
+                تشكيلة ضخمة ومتجددة
             </p>
 
         </div>
@@ -1550,26 +1146,22 @@ footer{
 
 
 
-    <!-- مباريات -->
-
     <div class="glass-card">
 
-        <div
-            class="card-image matches">
+        <div class="card-image">
+            ⌚
         </div>
 
-        <div
-            class="card-overlay">
-        </div>
+        <div class="card-overlay"></div>
 
         <div class="card-content">
 
             <h3>
-                مباريات
+                إكسسوارات
             </h3>
 
             <p>
-                الدوريات والمحتوى الرياضي
+                ساعات وملحقات ذكية
             </p>
 
         </div>
@@ -1578,26 +1170,22 @@ footer{
 
 
 
-    <!-- قنوات -->
-
     <div class="glass-card">
 
-        <div
-            class="card-image channels">
+        <div class="card-image">
+            🏷️
         </div>
 
-        <div
-            class="card-overlay">
-        </div>
+        <div class="card-overlay"></div>
 
         <div class="card-content">
 
             <h3>
-                قنوات
+                عروض
             </h3>
 
             <p>
-                ترفيه متنوع للجميع
+                خصومات متجددة للجميع
             </p>
 
         </div>
@@ -1609,9 +1197,7 @@ footer{
 
 
 
-<!-- =====================================================
-     COPY CONTACT
-===================================================== -->
+<!-- COPY CONTACT -->
 
 <section
     class="copy-area"
@@ -1653,13 +1239,11 @@ footer{
 
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
-    © 2026 أبو فيصل IPTV
+    © 2026 azaam STORE
     • جميع الحقوق محفوظة
 
 </footer>
@@ -1671,14 +1255,10 @@ footer{
 
 <script>
 
-/* =====================================================
-   COPY NUMBER
-===================================================== */
-
 function copyNumber(){
 
     const number =
-        "966575242678";
+        "966500000000";
 
     const message =
         document.getElementById(
@@ -1713,10 +1293,6 @@ function copyNumber(){
 
 }
 
-
-/* =====================================================
-   FALLBACK COPY
-===================================================== */
 
 function fallbackCopy(number){
 
@@ -1758,7 +1334,7 @@ function fallbackCopy(number){
         document.getElementById(
             "copyMessage"
         ).innerText =
-            "انسخ الرقم: 966575242678";
+            "انسخ الرقم: 966500000000";
 
     }
 
