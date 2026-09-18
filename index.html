@@ -8,7 +8,7 @@
                maximum-scale=1.0,
                user-scalable=no">
 
-<title>azaam</title>
+<title>أبو فيصل IPTV</title>
 
 <style>
 
@@ -86,15 +86,13 @@ body{
             rgba(2,5,8,.55),
             rgba(2,5,8,.78)
         ),
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(230,180,90,.18),
-            transparent 60%
-        );
+        url("1000208316.png")
+        center center /
+        cover no-repeat;
 
     filter:saturate(.8);
 
-    opacity:.85;
+    opacity:.52;
 
     z-index:-3;
 }
@@ -173,33 +171,20 @@ header{
     font-size:18px;
 }
 
-.brand .logo-circle{
+.brand img{
 
     width:52px;
     height:52px;
 
     border-radius:50%;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f4cd7e,
-            #8f6224
-        );
+    object-fit:cover;
 
     border:2px solid #d9aa55;
 
     box-shadow:
         0 0 12px rgba(231,184,91,.5),
         inset 0 0 10px rgba(255,255,255,.15);
-
-    font-size:20px;
-    font-weight:900;
-    color:#1c1206;
 }
 
 .brand small{
@@ -492,7 +477,7 @@ nav a:hover{
 }
 
 
-/* CARD ICON BACKDROP */
+/* CARD IMAGE */
 
 .card-image{
 
@@ -500,15 +485,11 @@ nav a:hover{
 
     inset:0;
 
-    display:flex;
+    background-size:cover;
 
-    align-items:center;
+    background-position:center;
 
-    justify-content:center;
-
-    font-size:56px;
-
-    opacity:.5;
+    opacity:.72;
 
     filter:saturate(.9);
 
@@ -589,6 +570,35 @@ nav a:hover{
 
     text-shadow:
         0 2px 8px #000;
+}
+
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+.movies{
+
+    background-image:
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=85");
+}
+
+.series{
+
+    background-image:
+        url("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=800&q=85");
+}
+
+.matches{
+
+    background-image:
+        url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=85");
+}
+
+.channels{
+
+    background-image:
+        url("https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=85");
 }
 
 
@@ -804,7 +814,7 @@ footer{
     }
 
 
-    .brand .logo-circle{
+    .brand img{
 
         width:48px;
         height:48px;
@@ -934,7 +944,7 @@ footer{
         height:57px;
     }
 
-    .brand .logo-circle{
+    .brand img{
         width:43px;
         height:43px;
     }
@@ -986,22 +996,25 @@ footer{
 <div class="page">
 
 
-<!-- HEADER -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
     <div class="brand">
 
-        <div class="logo-circle">
-            A
-        </div>
+        <img
+            src="1000173567.jpg"
+            alt="أبو فيصل IPTV"
+        >
 
         <div>
 
-            azaam
+            أبو فيصل
 
             <small>
-                STORE
+                IPTV
             </small>
 
         </div>
@@ -1016,7 +1029,7 @@ footer{
         </a>
 
         <a href="#features">
-            المنتجات
+            المميزات
         </a>
 
         <a href="#copy">
@@ -1026,9 +1039,9 @@ footer{
     </nav>
 
 
-    
+    <a
         class="buy"
-        href="https://wa.me/966500000000?text=السلام%20عليكم،%20أبغى%20أطلب"
+        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
         target="_blank"
     >
 
@@ -1040,7 +1053,9 @@ footer{
 
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section
     class="hero"
@@ -1052,10 +1067,10 @@ footer{
 
         <h1>
 
-            azaam
+            أبو فيصل
 
             <span>
-                STORE
+                IPTV
             </span>
 
         </h1>
@@ -1063,7 +1078,7 @@ footer{
 
         <p>
 
-            كل احتياجاتك التقنية تجدها هنا
+            كل احتياجاتك الترفيهية تجدها هنا
 
             <br>
 
@@ -1072,9 +1087,9 @@ footer{
         </p>
 
 
-        
+        <a
             class="hero-btn"
-            href="https://wa.me/966500000000?text=السلام%20عليكم،%20أبغى%20أطلب"
+            href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
             target="_blank"
         >
 
@@ -1090,7 +1105,9 @@ footer{
 
 
 
-<!-- GLASS CATEGORIES -->
+<!-- =====================================================
+     GLASS CATEGORIES
+===================================================== -->
 
 <section
     class="features"
@@ -1098,18 +1115,22 @@ footer{
 >
 
 
+    <!-- أفلام -->
+
     <div class="glass-card">
 
-        <div class="card-image">
-            📱
+        <div
+            class="card-image movies">
         </div>
 
-        <div class="card-overlay"></div>
+        <div
+            class="card-overlay">
+        </div>
 
         <div class="card-content">
 
             <h3>
-                جوالات
+                أفلام
             </h3>
 
             <p>
@@ -1122,22 +1143,26 @@ footer{
 
 
 
+    <!-- مسلسلات -->
+
     <div class="glass-card">
 
-        <div class="card-image">
-            🎧
+        <div
+            class="card-image series">
         </div>
 
-        <div class="card-overlay"></div>
+        <div
+            class="card-overlay">
+        </div>
 
         <div class="card-content">
 
             <h3>
-                سماعات
+                مسلسلات
             </h3>
 
             <p>
-                تشكيلة ضخمة ومتجددة
+                مكتبة ضخمة ومتجددة
             </p>
 
         </div>
@@ -1146,22 +1171,26 @@ footer{
 
 
 
+    <!-- مباريات -->
+
     <div class="glass-card">
 
-        <div class="card-image">
-            ⌚
+        <div
+            class="card-image matches">
         </div>
 
-        <div class="card-overlay"></div>
+        <div
+            class="card-overlay">
+        </div>
 
         <div class="card-content">
 
             <h3>
-                إكسسوارات
+                مباريات
             </h3>
 
             <p>
-                ساعات وملحقات ذكية
+                الدوريات والمحتوى الرياضي
             </p>
 
         </div>
@@ -1170,22 +1199,26 @@ footer{
 
 
 
+    <!-- قنوات -->
+
     <div class="glass-card">
 
-        <div class="card-image">
-            🏷️
+        <div
+            class="card-image channels">
         </div>
 
-        <div class="card-overlay"></div>
+        <div
+            class="card-overlay">
+        </div>
 
         <div class="card-content">
 
             <h3>
-                عروض
+                قنوات
             </h3>
 
             <p>
-                خصومات متجددة للجميع
+                ترفيه متنوع للجميع
             </p>
 
         </div>
@@ -1197,7 +1230,9 @@ footer{
 
 
 
-<!-- COPY CONTACT -->
+<!-- =====================================================
+     COPY CONTACT
+===================================================== -->
 
 <section
     class="copy-area"
@@ -1239,11 +1274,13 @@ footer{
 
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    © 2026 azaam STORE
+    © 2026 أبو فيصل IPTV
     • جميع الحقوق محفوظة
 
 </footer>
@@ -1255,10 +1292,14 @@ footer{
 
 <script>
 
+/* =====================================================
+   COPY NUMBER
+===================================================== */
+
 function copyNumber(){
 
     const number =
-        "966500000000";
+        "966575242678";
 
     const message =
         document.getElementById(
@@ -1293,6 +1334,10 @@ function copyNumber(){
 
 }
 
+
+/* =====================================================
+   FALLBACK COPY
+===================================================== */
 
 function fallbackCopy(number){
 
@@ -1334,7 +1379,7 @@ function fallbackCopy(number){
         document.getElementById(
             "copyMessage"
         ).innerText =
-            "انسخ الرقم: 966500000000";
+            "انسخ الرقم: 966575242678";
 
     }
 
