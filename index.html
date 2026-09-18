@@ -1,46 +1,778 @@
-<!DOCTYPE html>  <html lang="ar" dir="rtl">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>أبو فيصل IPTV</title>  
-<style>  
-*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#080b10;color:#fff}  
-header{position:sticky;top:0;z-index:5;background:#080b10ee;border-bottom:1px solid #c89b4d55;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 5%}  
-.brand{display:flex;align-items:center;gap:10px;color:#e6bd72;font-weight:bold}.brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #d7aa5e}  
-nav{display:flex;gap:22px}nav a{color:#ead9bd;text-decoration:none;font-size:13px}.buy{background:#d5aa60;color:#1c1209;padding:12px 18px;border-radius:24px;text-decoration:none;font-weight:bold;font-size:13px}  
-.hero{min-height:430px;background:linear-gradient(90deg,#05080dcc,#05080d44),url("1000208316.png") center/cover;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 18px}  
-.hero h1{font-size:clamp(35px,6vw,70px);margin:0 0 15px;text-shadow:0 5px 15px #000}.hero p{font-size:clamp(18px,3vw,28px);color:#f0c878;margin:0 0 25px}.hero a{display:inline-block;background:linear-gradient(#d9b36c,#9d7138);color:#20150c;padding:15px 28px;border-radius:30px;text-decoration:none;font-weight:bold}  
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1100px;margin:-35px auto 40px;padding:0 18px;position:relative}.feature{background:linear-gradient(145deg,#171b22,#090b10);border:1px solid #d5a75d88;border-radius:18px;padding:22px 12px;text-align:center}.feature strong{display:block;color:#f0c878;font-size:20px;margin-bottom:8px}.feature span{color:#d7d7d7;font-size:13px}  
-.about{max-width:1100px;margin:auto;padding:20px 18px 50px;text-align:center}.about h2{font-size:34px;color:#e8bc70}.about p{color:#ddd;line-height:2;font-size:17px}  
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:1px solid #d5a75d88}  
-.contact{max-width:650px;margin:0 auto 60px;background:linear-gradient(145deg,#3a2417,#170e09);border:1px solid #238ed0;border-radius:28px;padding:32px 22px;text-align:center}.contact img{width:140px;height:140px;border-radius:50%;border:5px solid #d9b36c;object-fit:cover}.contact h2{font-size:38px;margin:18px 0 10px}.contact p{color:#dcb77c;font-size:20px;line-height:1.8}.whatsapp{display:block;background:linear-gradient(#895b39,#59361f);border:1px solid #c49664;color:#fff;text-decoration:none;padding:18px;border-radius:18px;font-size:22px;font-weight:bold;margin-top:22px}  
-footer{text-align:center;color:#b9a78f;padding:25px;border-top:1px solid #c89b4d33}  
-@media(max-width:750px){nav{display:none}.features{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:1fr}.hero{min-height:390px}}  
-</style>  
-</head>  <body>  <header>  
-  <div class="brand">  
-    <img src="1000173567.jpg" alt="شعار أبو فيصل">  
-    <div>أبو فيصل<small style="display:block;font-size:10px">IPTV</small></div>  
-  </div>    <nav>  
-    <a href="#home">الرئيسية</a>  
-    <a href="#features">المميزات</a>  
-    <a href="#gallery">المعرض</a>  
-    <a href="#contact">تواصل معنا</a>  
-  </nav>    <a class="buy" href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب" target="_blank">  
-    🛒 اشترك الآن  
-  </a>  
-</header>  <section class="hero" id="home">  
-  <div>  
-    <h1>أبو فيصل IPTV</h1>  
-    <p>كل احتياجاتك الترفيهية تجدها هنا<br>بأسعار مميزة وعروض مستمرة</p>  <a href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب" target="_blank">  
-  💬 تواصل معنا عبر واتساب  
-</a>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  </div>  
-</section>  <section class="features" id="features">  
-  <div class="feature"><strong>🎬 أفلام</strong><span>أحدث الإصدارات</span></div>  
-  <div class="feature"><strong>📺 مسلسلات</strong><span>مكتبة ضخمة ومتجددة</span></div>  
-  <div class="feature"><strong>⚽ مباريات</strong><span>الدوريات والمحتوى الرياضي</span></div>  
-  <div class="feature"><strong>📡 قنوات</strong><span>ترفيه متنوع للجميع</span></div>  
-</section>  </body>  
-</html>  
+<title>أبو فيصل IPTV</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:
+    radial-gradient(circle at 20% 20%,#33230d55,transparent 35%),
+    radial-gradient(circle at 80% 70%,#b8862d22,transparent 35%),
+    #05070b;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===== الخلفية ===== */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(120deg,#ffffff03 25%,transparent 25%),
+    linear-gradient(300deg,#d9b36c05 25%,transparent 25%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    padding:12px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+
+    background:rgba(7,10,15,.72);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(224,178,91,.3);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#e8bd70;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.brand img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #d9ad5d;
+    box-shadow:
+    0 0 15px #d9ad5d55,
+    0 0 35px #d9ad5d22;
+}
+
+.brand small{
+    display:block;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#e8ddc8;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e8bd70;
+}
+
+.buy{
+    text-decoration:none;
+    color:#181008;
+    background:linear-gradient(135deg,#f0ca7d,#a87832);
+    padding:13px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    box-shadow:0 8px 25px #d5a65d33;
+    transition:.3s;
+}
+
+.buy:hover{
+    transform:translateY(-2px);
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:570px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+
+    background:
+    linear-gradient(180deg,#03050777,#030507ee),
+    url("1000208316.png") center/cover;
+
+    position:relative;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        transparent 50%,
+        #05070b 100%
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,85px);
+    margin-bottom:20px;
+    color:#fff;
+    text-shadow:
+    0 5px 25px #000,
+    0 0 30px #d9ad5d44;
+}
+
+.hero h1 span{
+    color:#e7bb6d;
+}
+
+.hero p{
+    color:#f0ca7d;
+    font-size:clamp(18px,3vw,27px);
+    line-height:2;
+    margin-bottom:35px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:18px 38px;
+    border-radius:40px;
+    text-decoration:none;
+    color:#1b1108;
+    font-size:19px;
+    font-weight:bold;
+
+    background:linear-gradient(
+        135deg,
+        #f2cd82,
+        #a97835
+    );
+
+    box-shadow:
+    0 15px 45px #0008,
+    0 0 30px #d8aa5d33;
+
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-4px) scale(1.02);
+}
+
+/* ===== GLASS SECTION ===== */
+
+.section{
+    max-width:1150px;
+    margin:auto;
+    padding:65px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    color:#efc576;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#aaa;
+}
+
+/* ===== GLASS CARDS ===== */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.glass-card{
+    position:relative;
+    min-height:260px;
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.12),
+        rgba(255,255,255,.035)
+    );
+
+    border:1px solid rgba(231,190,105,.4);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.12),
+    0 20px 50px #0006;
+
+    transition:.4s;
+}
+
+.glass-card:hover{
+    transform:translateY(-8px);
+    border-color:#e5b967;
+    box-shadow:
+    0 25px 60px #0008,
+    0 0 35px #d5a75d22;
+}
+
+.card-image{
+    position:absolute;
+    inset:0;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:.48;
+
+    transition:.5s;
+}
+
+.glass-card:hover .card-image{
+    transform:scale(1.08);
+    opacity:.6;
+}
+
+.card-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        180deg,
+        transparent 10%,
+        #05070bcc 75%,
+        #05070bee 100%
+    );
+}
+
+.card-content{
+    position:absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    padding:25px;
+    z-index:2;
+}
+
+.card-content h3{
+    color:#efc576;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#eee;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* ===== الصور ===== */
+
+.movies{
+    background-image:url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80");
+}
+
+.series{
+    background-image:url("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=900&q=80");
+}
+
+.sports{
+    background-image:url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80");
+}
+
+.channels{
+    background-image:url("https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=80");
+}
+
+/* ===== ABOUT ===== */
+
+.about{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(231,190,105,.25);
+
+    backdrop-filter:blur(18px);
+}
+
+.about h2{
+    color:#efc576;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#ddd;
+    line-height:2.2;
+    font-size:17px;
+}
+
+/* ===== COPY NUMBER ===== */
+
+.copy-section{
+    max-width:700px;
+    margin:20px auto 80px;
+    padding:0 20px;
+    text-align:center;
+}
+
+.copy-box{
+    padding:40px 25px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.11),
+        rgba(255,255,255,.035)
+    );
+
+    border:1px solid rgba(231,190,105,.45);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 25px 70px #0008,
+    inset 0 1px 1px #ffffff12;
+}
+
+.copy-box h2{
+    color:#efc576;
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.copy-box p{
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+.copy-btn{
+    border:none;
+    cursor:pointer;
+
+    width:100%;
+    padding:18px;
+
+    border-radius:20px;
+
+    color:#1a1008;
+    font-size:19px;
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f1cc82,
+        #a87735
+    );
+
+    box-shadow:
+    0 10px 30px #d9ad5d33;
+
+    transition:.3s;
+}
+
+.copy-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+    0 15px 40px #d9ad5d55;
+}
+
+.copy-message{
+    display:block;
+    margin-top:15px;
+    color:#e8bd70;
+    font-size:14px;
+    min-height:20px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    color:#988b78;
+    border-top:1px solid #d5a75d22;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    header{
+        padding:10px 4%;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .glass-card{
+        min-height:240px;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+}
+
+@media(max-width:500px){
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .glass-card{
+        min-height:250px;
+    }
+
+    .brand{
+        font-size:17px;
+    }
+
+    .brand img{
+        width:48px;
+        height:48px;
+    }
+
+    .buy{
+        padding:11px 15px;
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+
+<header>
+
+    <div class="brand">
+        <img src="1000173567.jpg" alt="شعار أبو فيصل">
+        <div>
+            أبو فيصل
+            <small>IPTV</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#features">المحتوى</a>
+        <a href="#about">عن الخدمة</a>
+        <a href="#copy">التواصل</a>
+    </nav>
+
+    <a
+        class="buy"
+        href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
+        target="_blank"
+    >
+        🛒 اشترك الآن
+    </a>
+
+</header>
+
+
+<!-- ===== HERO ===== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            أبو فيصل <span>IPTV</span>
+        </h1>
+
+        <p>
+            كل احتياجاتك الترفيهية تجدها هنا
+            <br>
+            بأسعار مميزة وعروض مستمرة
+        </p>
+
+        <a
+            class="hero-btn"
+            href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
+            target="_blank"
+        >
+            💬 تواصل معنا عبر واتساب
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ===== CONTENT ===== -->
+
+<section class="section" id="features">
+
+    <div class="section-title">
+
+        <h2>محتوى ترفيهي متكامل</h2>
+
+        <p>
+            كل ما تحتاجه للترفيه في مكان واحد
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <!-- أفلام -->
+
+        <div class="glass-card">
+
+            <div class="card-image movies"></div>
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
+                <h3>🎬 أفلام</h3>
+
+                <p>
+                    أحدث الأفلام والإصدارات
+                    بجودة عالية وتجربة مشاهدة مميزة
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- مسلسلات -->
+
+        <div class="glass-card">
+
+            <div class="card-image series"></div>
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
+                <h3>📺 مسلسلات</h3>
+
+                <p>
+                    مكتبة ضخمة ومتجددة
+                    من المسلسلات العربية والعالمية
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- مباريات -->
+
+        <div class="glass-card">
+
+            <div class="card-image sports"></div>
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
+                <h3>⚽ مباريات</h3>
+
+                <p>
+                    الدوريات والمحتوى الرياضي
+                    لعشاق كرة القدم
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- قنوات -->
+
+        <div class="glass-card">
+
+            <div class="card-image channels"></div>
+            <div class="card-overlay"></div>
+
+            <div class="card-content">
+
+                <h3>📡 قنوات</h3>
+
+                <p>
+                    قنوات متنوعة وترفيه متكامل
+                    لجميع أفراد العائلة
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== ABOUT ===== -->
+
+<section class="section" id="about">
+
+    <div class="about">
+
+        <h2>أبو فيصل IPTV</h2>
+
+        <p>
+            استمتع بتجربة ترفيهية متكاملة
+            مع مجموعة متنوعة من القنوات
+            والأفلام والمسلسلات والمحتوى الرياضي
+            في تصميم عصري وتجربة استخدام سهلة.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===== COPY NUMBER ===== -->
+
+<section class="copy-section" id="copy">
+
+    <div class="copy-box">
+
+        <h2>
+            📋 لنسخ رقم التواصل
+        </h2>
+
+        <p>
+            اضغط على الزر بالأسفل لنسخ رقم التواصل
+        </p>
+
+        <button
+            class="copy-btn"
+            onclick="copyNumber()"
+        >
+            📱 لنسخ رقم التواصل اضغط هنا
+        </button>
+
+        <span
+            class="copy-message"
+            id="copyMessage"
+        ></span>
+
+    </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    © 2026 أبو فيصل IPTV
+    <br>
+    جميع الحقوق محفوظة
+
+</footer>
+
+
+<script>
+
+/* ===== نسخ رقم التواصل ===== */
+
+function copyNumber(){
+
+    const number = "966575242678";
+
+    navigator.clipboard.writeText(number)
+    .then(function(){
+
+        document.getElementById("copyMessage").innerText =
+        "✅ تم نسخ رقم التواصل بنجاح";
+
+    })
+    .catch(function(){
+
+        /* طريقة بديلة إذا لم يسمح المتصفح بالنسخ */
+
+        const input = document.createElement("input");
+
+        input.value = number;
+
+        document.body.appendChild(input);
+
+        input.select();
+
+        document.execCommand("copy");
+
+        input.remove();
+
+        document.getElementById("copyMessage").innerText =
+        "✅ تم نسخ رقم التواصل بنجاح";
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
