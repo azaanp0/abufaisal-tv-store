@@ -1,451 +1,778 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
 
-<title>هأبو فيصل IPTV</title>
+<title>أبو فيصل IPTV</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
+html,
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:
-    radial-gradient(circle at 20% 20%,#33230d55,transparent 35%),
-    radial-gradient(circle at 80% 70%,#b8862d22,transparent 35%),
-    #05070b;
-    color:#fff;
-    overflow-x:hidden;
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
 
-/* ===== الخلفية ===== */
+body{
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
 
-body:before{
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(190,140,50,.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(190,140,50,.08),
+            transparent 30%
+        ),
+        #030609;
+
+    color:white;
+}
+
+
+/* =====================================================
+   MAIN SCREEN
+===================================================== */
+
+.page{
+    width:100%;
+    height:100dvh;
+    min-height:500px;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+
+/* =====================================================
+   CINEMATIC BACKGROUND
+===================================================== */
+
+.page::before{
     content:"";
-    position:fixed;
+
+    position:absolute;
     inset:0;
+
     background:
-    linear-gradient(120deg,#ffffff03 25%,transparent 25%),
-    linear-gradient(300deg,#d9b36c05 25%,transparent 25%);
-    pointer-events:none;
-    z-index:-1;
+        linear-gradient(
+            180deg,
+            rgba(2,5,8,.55),
+            rgba(2,5,8,.78)
+        ),
+        url("1000208316.png")
+        center center /
+        cover no-repeat;
+
+    filter:saturate(.8);
+
+    opacity:.52;
+
+    z-index:-3;
 }
 
-/* ===== HEADER ===== */
+
+.page::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            transparent 15%,
+            rgba(0,0,0,.55) 75%
+        );
+
+    z-index:-2;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    padding:12px 5%;
+
+    width:94%;
+    height:72px;
+
+    margin:10px auto 0;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
 
-    background:rgba(7,10,15,.72);
+    padding:7px 12px;
+
+    border-radius:38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.035)
+        );
+
+    border:1px solid rgba(224,174,78,.65);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 10px 35px rgba(0,0,0,.45),
+        0 0 20px rgba(214,166,73,.10);
+
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
 
-    border-bottom:1px solid rgba(224,178,91,.3);
+    flex-shrink:0;
 }
 
+
+/* LOGO */
+
 .brand{
+
     display:flex;
     align-items:center;
-    gap:12px;
-    color:#e8bd70;
+
+    gap:9px;
+
+    color:#edc875;
+
     font-weight:bold;
-    font-size:20px;
+
+    font-size:18px;
 }
 
 .brand img{
-    width:55px;
-    height:55px;
+
+    width:52px;
+    height:52px;
+
     border-radius:50%;
+
     object-fit:cover;
-    border:2px solid #d9ad5d;
+
+    border:2px solid #d9aa55;
+
     box-shadow:
-    0 0 15px #d9ad5d55,
-    0 0 35px #d9ad5d22;
+        0 0 12px rgba(231,184,91,.5),
+        inset 0 0 10px rgba(255,255,255,.15);
 }
 
 .brand small{
+
     display:block;
-    font-size:10px;
+
+    font-size:9px;
+
+    color:#e6bd72;
+
     letter-spacing:2px;
+
+    text-align:center;
 }
 
+
+/* NAV */
+
 nav{
+
     display:flex;
-    gap:28px;
+
+    gap:25px;
 }
 
 nav a{
-    color:#e8ddc8;
+
+    color:#eee3ce;
+
     text-decoration:none;
-    font-size:14px;
+
+    font-size:13px;
+
     transition:.3s;
 }
 
 nav a:hover{
-    color:#e8bd70;
+
+    color:#f0c66f;
 }
+
+
+/* BUY BUTTON */
 
 .buy{
-    text-decoration:none;
-    color:#181008;
-    background:linear-gradient(135deg,#f0ca7d,#a87832);
-    padding:13px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    box-shadow:0 8px 25px #d5a65d33;
-    transition:.3s;
-}
 
-.buy:hover{
-    transform:translateY(-2px);
-}
-
-/* ===== HERO ===== */
-
-.hero{
-    min-height:570px;
     display:flex;
+
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:70px 20px;
+
+    gap:7px;
+
+    text-decoration:none;
+
+    color:#160e06;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    padding:14px 22px;
+
+    border-radius:30px;
 
     background:
-    linear-gradient(180deg,#03050777,#030507ee),
-    url("1000208316.png") center/cover;
+        linear-gradient(
+            135deg,
+            #f4cd7e,
+            #bc8437
+        );
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.4),
+        inset 0 1px rgba(255,255,255,.45);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    flex:1;
+
+    min-height:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
 
     position:relative;
+
+    padding:8px 18px 5px;
 }
 
-.hero:after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        180deg,
-        transparent 50%,
-        #05070b 100%
-    );
-}
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    max-width:850px;
+
+    width:100%;
+
+    max-width:900px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
 }
 
+
+/* HERO TITLE */
+
 .hero h1{
-    font-size:clamp(42px,8vw,85px);
-    margin-bottom:20px;
-    color:#fff;
+
+    font-size:
+        clamp(
+            40px,
+            7vw,
+            78px
+        );
+
+    line-height:1;
+
+    margin-bottom:14px;
+
+    color:white;
+
+    font-weight:900;
+
     text-shadow:
-    0 5px 25px #000,
-    0 0 30px #d9ad5d44;
+        0 4px 15px rgba(0,0,0,.9),
+        0 0 30px rgba(255,255,255,.12);
 }
 
 .hero h1 span{
-    color:#e7bb6d;
+
+    color:#e9bd68;
+
+    font-weight:800;
 }
+
+
+/* HERO TEXT */
 
 .hero p{
-    color:#f0ca7d;
-    font-size:clamp(18px,3vw,27px);
-    line-height:2;
-    margin-bottom:35px;
+
+    color:#efc875;
+
+    font-size:
+        clamp(
+            16px,
+            2.5vw,
+            24px
+        );
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 3px 10px #000;
 }
 
+
+/* WHATSAPP */
+
 .hero-btn{
-    display:inline-block;
-    padding:18px 38px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    width:min(390px,85%);
+
+    padding:14px 20px;
+
     border-radius:40px;
+
+    color:#171008;
+
     text-decoration:none;
-    color:#1b1108;
-    font-size:19px;
+
+    font-size:18px;
+
     font-weight:bold;
 
-    background:linear-gradient(
-        135deg,
-        #f2cd82,
-        #a97835
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #f5cf83,
+            #b67d31
+        );
+
+    border:1px solid #f0ca7c;
 
     box-shadow:
-    0 15px 45px #0008,
-    0 0 30px #d8aa5d33;
+        0 10px 30px rgba(0,0,0,.55),
+        0 0 25px rgba(225,173,76,.18),
+        inset 0 1px rgba(255,255,255,.55);
+
+    transition:.25s;
+}
+
+.hero-btn:active{
+
+    transform:scale(.97);
+}
+
+
+/* =====================================================
+   GLASS CARDS
+===================================================== */
+
+.features{
+
+    width:94%;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+    flex-shrink:0;
+}
+
+
+/* CARD */
+
+.glass-card{
+
+    position:relative;
+
+    height:
+        clamp(
+            105px,
+            16vh,
+            165px
+        );
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.045)
+        );
+
+    border:
+        1px solid
+        rgba(226,176,78,.68);
+
+    box-shadow:
+
+        inset 0 1px 1px
+        rgba(255,255,255,.22),
+
+        inset 0 -20px 40px
+        rgba(0,0,0,.22),
+
+        0 10px 30px
+        rgba(0,0,0,.55),
+
+        0 0 18px
+        rgba(214,163,69,.08);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
 
     transition:.3s;
 }
 
-.hero-btn:hover{
-    transform:translateY(-4px) scale(1.02);
-}
 
-/* ===== GLASS SECTION ===== */
+/* CARD IMAGE */
 
-.section{
-    max-width:1150px;
-    margin:auto;
-    padding:65px 20px;
-}
+.card-image{
 
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-}
+    position:absolute;
 
-.section-title h2{
-    color:#efc576;
-    font-size:34px;
-    margin-bottom:10px;
-}
+    inset:0;
 
-.section-title p{
-    color:#aaa;
-}
+    background-size:cover;
 
-/* ===== GLASS CARDS ===== */
+    background-position:center;
 
-.features{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
+    opacity:.72;
 
-.glass-card{
-    position:relative;
-    min-height:260px;
-    overflow:hidden;
-
-    border-radius:28px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.035)
-    );
-
-    border:1px solid rgba(231,190,105,.4);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.12),
-    0 20px 50px #0006;
+    filter:saturate(.9);
 
     transition:.4s;
 }
 
-.glass-card:hover{
-    transform:translateY(-8px);
-    border-color:#e5b967;
-    box-shadow:
-    0 25px 60px #0008,
-    0 0 35px #d5a75d22;
-}
 
-.card-image{
-    position:absolute;
-    inset:0;
-
-    background-size:cover;
-    background-position:center;
-
-    opacity:.48;
-
-    transition:.5s;
-}
-
-.glass-card:hover .card-image{
-    transform:scale(1.08);
-    opacity:.6;
-}
+/* DARK GLASS */
 
 .card-overlay{
+
     position:absolute;
+
     inset:0;
+
     background:
-    linear-gradient(
-        180deg,
-        transparent 10%,
-        #05070bcc 75%,
-        #05070bee 100%
-    );
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05),
+            rgba(2,5,8,.82)
+        );
 }
+
+
+/* CARD CONTENT */
 
 .card-content{
+
     position:absolute;
-    bottom:0;
-    right:0;
-    left:0;
-    padding:25px;
-    z-index:2;
+
+    inset:0;
+
+    z-index:3;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:13px;
 }
+
 
 .card-content h3{
-    color:#efc576;
-    font-size:25px;
-    margin-bottom:10px;
+
+    color:#efc574;
+
+    font-size:
+        clamp(
+            17px,
+            3vw,
+            25px
+        );
+
+    margin-bottom:3px;
+
+    text-shadow:
+        0 3px 10px #000;
 }
+
 
 .card-content p{
-    color:#eee;
-    font-size:14px;
-    line-height:1.8;
+
+    color:#f0eeee;
+
+    font-size:
+        clamp(
+            11px,
+            2vw,
+            15px
+        );
+
+    text-shadow:
+        0 2px 8px #000;
 }
 
-/* ===== الصور ===== */
+
+/* =====================================================
+   IMAGES
+===================================================== */
 
 .movies{
-    background-image:url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80");
+
+    background-image:
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=85");
 }
 
 .series{
-    background-image:url("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=900&q=80");
+
+    background-image:
+        url("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=800&q=85");
 }
 
-.sports{
-    background-image:url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80");
+.matches{
+
+    background-image:
+        url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=85");
 }
 
 .channels{
-    background-image:url("https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=80");
+
+    background-image:
+        url("https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=85");
 }
 
-/* ===== ABOUT ===== */
 
-.about{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
+/* =====================================================
+   COPY NUMBER
+===================================================== */
 
-    padding:35px;
+.copy-area{
 
-    border-radius:30px;
+    width:94%;
 
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(231,190,105,.25);
+    margin:
+        10px auto
+        10px;
 
-    backdrop-filter:blur(18px);
+    flex-shrink:0;
 }
 
-.about h2{
-    color:#efc576;
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-.about p{
-    color:#ddd;
-    line-height:2.2;
-    font-size:17px;
-}
-
-/* ===== COPY NUMBER ===== */
-
-.copy-section{
-    max-width:700px;
-    margin:20px auto 80px;
-    padding:0 20px;
-    text-align:center;
-}
 
 .copy-box{
-    padding:40px 25px;
 
-    border-radius:30px;
+    min-height:65px;
+
+    padding:
+        9px 15px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
 
     background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.11),
-        rgba(255,255,255,.035)
-    );
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.035)
+        );
 
-    border:1px solid rgba(231,190,105,.45);
+    border:
+        1px solid
+        rgba(228,177,76,.65);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.15),
+        0 10px 30px rgba(0,0,0,.5);
 
     backdrop-filter:blur(20px);
+
     -webkit-backdrop-filter:blur(20px);
-
-    box-shadow:
-    0 25px 70px #0008,
-    inset 0 1px 1px #ffffff12;
 }
 
-.copy-box h2{
-    color:#efc576;
-    font-size:27px;
-    margin-bottom:12px;
+
+.copy-text{
+
+    text-align:right;
 }
 
-.copy-box p{
-    color:#ccc;
-    margin-bottom:25px;
+
+.copy-text strong{
+
+    display:block;
+
+    color:#efc575;
+
+    font-size:
+        clamp(
+            14px,
+            2.5vw,
+            20px
+        );
 }
+
+
+.copy-text span{
+
+    color:#ddd;
+
+    font-size:11px;
+}
+
+
+/* COPY BUTTON */
 
 .copy-btn{
-    border:none;
+
+    border:1px solid #edc16d;
+
     cursor:pointer;
 
-    width:100%;
-    padding:18px;
+    white-space:nowrap;
 
-    border-radius:20px;
+    color:#160e07;
 
-    color:#1a1008;
-    font-size:19px;
+    font-family:inherit;
+
+    font-size:13px;
+
     font-weight:bold;
 
+    padding:
+        12px 18px;
+
+    border-radius:25px;
+
     background:
-    linear-gradient(
-        135deg,
-        #f1cc82,
-        #a87735
-    );
+        linear-gradient(
+            135deg,
+            #f4cc7c,
+            #a9702c
+        );
 
     box-shadow:
-    0 10px 30px #d9ad5d33;
+        0 5px 20px rgba(0,0,0,.4),
+        inset 0 1px rgba(255,255,255,.5);
 
-    transition:.3s;
+    transition:.25s;
 }
 
-.copy-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:
-    0 15px 40px #d9ad5d55;
+.copy-btn:active{
+
+    transform:scale(.95);
 }
 
-.copy-message{
+
+#copyMessage{
+
     display:block;
-    margin-top:15px;
-    color:#e8bd70;
-    font-size:14px;
-    min-height:20px;
+
+    color:#78d98a;
+
+    font-size:10px;
+
+    margin-top:3px;
 }
 
-/* ===== FOOTER ===== */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-    text-align:center;
-    padding:30px 20px;
-    color:#988b78;
-    border-top:1px solid #d5a75d22;
+
+    width:94%;
+
+    margin:0 auto;
+
+    height:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#8f877b;
+
+    font-size:9px;
+
+    border-top:
+        1px solid
+        rgba(220,170,70,.15);
+
+    flex-shrink:0;
 }
 
-/* ===== MOBILE ===== */
+
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media(max-width:850px){
 
@@ -454,325 +781,614 @@ footer{
     }
 
     header{
-        padding:10px 4%;
-    }
-
-    .features{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .glass-card{
-        min-height:240px;
+        height:65px;
     }
 
     .hero{
-        min-height:500px;
+        padding-top:4px;
     }
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media(max-width:500px){
 
-    .features{
-        grid-template-columns:1fr;
+    header{
+
+        width:94%;
+
+        height:63px;
+
+        margin-top:7px;
+
+        padding:5px 8px;
     }
 
-    .glass-card{
-        min-height:250px;
-    }
 
     .brand{
-        font-size:17px;
+
+        font-size:16px;
     }
 
+
     .brand img{
+
         width:48px;
         height:48px;
     }
 
+
     .buy{
-        padding:11px 15px;
+
         font-size:12px;
+
+        padding:
+            11px 16px;
+    }
+
+
+    .hero h1{
+
+        font-size:
+            clamp(
+                37px,
+                12vw,
+                55px
+            );
+
+        margin-bottom:8px;
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+        line-height:1.7;
+
+        margin-bottom:10px;
+    }
+
+
+    .hero-btn{
+
+        font-size:16px;
+
+        padding:12px 18px;
+    }
+
+
+    .glass-card{
+
+        height:
+            clamp(
+                105px,
+                15vh,
+                145px
+            );
+
+        border-radius:22px;
+    }
+
+
+    .card-content{
+
+        padding:10px;
+    }
+
+
+    .card-content h3{
+
+        font-size:18px;
+    }
+
+
+    .card-content p{
+
+        font-size:11px;
+    }
+
+
+    .copy-box{
+
+        min-height:61px;
+
+        padding:7px 10px;
+
+        border-radius:19px;
+
+        gap:8px;
+    }
+
+
+    .copy-text strong{
+
+        font-size:13px;
+    }
+
+
+    .copy-text span{
+
+        font-size:9px;
+    }
+
+
+    .copy-btn{
+
+        font-size:11px;
+
+        padding:
+            11px 12px;
+    }
+
+
+    footer{
+
+        height:21px;
+
+        font-size:8px;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media(max-height:700px){
+
+    header{
+        height:57px;
+    }
+
+    .brand img{
+        width:43px;
+        height:43px;
+    }
+
+    .brand{
+        font-size:14px;
+    }
+
+    .buy{
+        padding:9px 13px;
+        font-size:11px;
     }
 
     .hero h1{
-        font-size:48px;
+        font-size:40px;
     }
 
     .hero p{
-        font-size:18px;
+        font-size:14px;
+        margin-bottom:7px;
+    }
+
+    .hero-btn{
+        padding:10px 16px;
+        font-size:14px;
+    }
+
+    .glass-card{
+        height:105px;
+    }
+
+    .copy-area{
+        margin-top:7px;
+        margin-bottom:5px;
+    }
+
+    .copy-box{
+        min-height:55px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ===== HEADER ===== -->
+
+<div class="page">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
     <div class="brand">
-        <img src="1000173567.jpg" alt="شعار أبو فيصل">
+
+        <img
+            src="1000173567.jpg"
+            alt="أبو فيصل IPTV"
+        >
+
         <div>
+
             أبو فيصل
-            <small>IPTV</small>
+
+            <small>
+                IPTV
+            </small>
+
         </div>
+
     </div>
 
+
     <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#features">المحتوى</a>
-        <a href="#about">عن الخدمة</a>
-        <a href="#copy">التواصل</a>
+
+        <a href="#home">
+            الرئيسية
+        </a>
+
+        <a href="#features">
+            المميزات
+        </a>
+
+        <a href="#copy">
+            التواصل
+        </a>
+
     </nav>
+
 
     <a
         class="buy"
         href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
         target="_blank"
     >
+
         🛒 اشترك الآن
+
     </a>
 
 </header>
 
 
-<!-- ===== HERO ===== -->
 
-<section class="hero" id="home">
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-content">
 
+
         <h1>
-            أبو فيصل <span>IPTV</span>
+
+            أبو فيصل
+
+            <span>
+                IPTV
+            </span>
+
         </h1>
 
+
         <p>
+
             كل احتياجاتك الترفيهية تجدها هنا
+
             <br>
+
             بأسعار مميزة وعروض مستمرة
+
         </p>
+
 
         <a
             class="hero-btn"
             href="https://wa.me/966575242678?text=السلام%20عليكم،%20أبغى%20أطلب"
             target="_blank"
         >
-            💬 تواصل معنا عبر واتساب
+
+            💬
+            تواصل معنا عبر واتساب
+
         </a>
 
-    </div>
-
-</section>
-
-
-<!-- ===== CONTENT ===== -->
-
-<section class="section" id="features">
-
-    <div class="section-title">
-
-        <h2>محتوى ترفيهي متكامل</h2>
-
-        <p>
-            كل ما تحتاجه للترفيه في مكان واحد
-        </p>
-
-    </div>
-
-
-    <div class="features">
-
-
-        <!-- أفلام -->
-
-        <div class="glass-card">
-
-            <div class="card-image movies"></div>
-            <div class="card-overlay"></div>
-
-            <div class="card-content">
-
-                <h3>🎬 أفلام</h3>
-
-                <p>
-                    أحدث الأفلام والإصدارات
-                    بجودة عالية وتجربة مشاهدة مميزة
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- مسلسلات -->
-
-        <div class="glass-card">
-
-            <div class="card-image series"></div>
-            <div class="card-overlay"></div>
-
-            <div class="card-content">
-
-                <h3>📺 مسلسلات</h3>
-
-                <p>
-                    مكتبة ضخمة ومتجددة
-                    من المسلسلات العربية والعالمية
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- مباريات -->
-
-        <div class="glass-card">
-
-            <div class="card-image sports"></div>
-            <div class="card-overlay"></div>
-
-            <div class="card-content">
-
-                <h3>⚽ مباريات</h3>
-
-                <p>
-                    الدوريات والمحتوى الرياضي
-                    لعشاق كرة القدم
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- قنوات -->
-
-        <div class="glass-card">
-
-            <div class="card-image channels"></div>
-            <div class="card-overlay"></div>
-
-            <div class="card-content">
-
-                <h3>📡 قنوات</h3>
-
-                <p>
-                    قنوات متنوعة وترفيه متكامل
-                    لجميع أفراد العائلة
-                </p>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
 
-<!-- ===== ABOUT ===== -->
 
-<section class="section" id="about">
+<!-- =====================================================
+     GLASS CATEGORIES
+===================================================== -->
 
-    <div class="about">
+<section
+    class="features"
+    id="features"
+>
 
-        <h2>أبو فيصل IPTV</h2>
 
-        <p>
-            استمتع بتجربة ترفيهية متكاملة
-            مع مجموعة متنوعة من القنوات
-            والأفلام والمسلسلات والمحتوى الرياضي
-            في تصميم عصري وتجربة استخدام سهلة.
-        </p>
+    <!-- أفلام -->
+
+    <div class="glass-card">
+
+        <div
+            class="card-image movies">
+        </div>
+
+        <div
+            class="card-overlay">
+        </div>
+
+        <div class="card-content">
+
+            <h3>
+                أفلام
+            </h3>
+
+            <p>
+                أحدث الإصدارات
+            </p>
+
+        </div>
 
     </div>
+
+
+
+    <!-- مسلسلات -->
+
+    <div class="glass-card">
+
+        <div
+            class="card-image series">
+        </div>
+
+        <div
+            class="card-overlay">
+        </div>
+
+        <div class="card-content">
+
+            <h3>
+                مسلسلات
+            </h3>
+
+            <p>
+                مكتبة ضخمة ومتجددة
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- مباريات -->
+
+    <div class="glass-card">
+
+        <div
+            class="card-image matches">
+        </div>
+
+        <div
+            class="card-overlay">
+        </div>
+
+        <div class="card-content">
+
+            <h3>
+                مباريات
+            </h3>
+
+            <p>
+                الدوريات والمحتوى الرياضي
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- قنوات -->
+
+    <div class="glass-card">
+
+        <div
+            class="card-image channels">
+        </div>
+
+        <div
+            class="card-overlay">
+        </div>
+
+        <div class="card-content">
+
+            <h3>
+                قنوات
+            </h3>
+
+            <p>
+                ترفيه متنوع للجميع
+            </p>
+
+        </div>
+
+    </div>
+
 
 </section>
 
 
-<!-- ===== COPY NUMBER ===== -->
 
-<section class="copy-section" id="copy">
+<!-- =====================================================
+     COPY CONTACT
+===================================================== -->
+
+<section
+    class="copy-area"
+    id="copy"
+>
 
     <div class="copy-box">
 
-        <h2>
-            📋 لنسخ رقم التواصل
-        </h2>
 
-        <p>
-            اضغط على الزر بالأسفل لنسخ رقم التواصل
-        </p>
+        <div class="copy-text">
+
+            <strong>
+                📋 لنسخ رقم التواصل
+            </strong>
+
+            <span>
+                اضغط هنا لنسخ الرقم مباشرة
+            </span>
+
+            <span id="copyMessage"></span>
+
+        </div>
+
 
         <button
             class="copy-btn"
             onclick="copyNumber()"
         >
-            📱 لنسخ رقم التواصل اضغط هنا
+
+            📱
+            نسخ الرقم
+
         </button>
 
-        <span
-            class="copy-message"
-            id="copyMessage"
-        ></span>
 
     </div>
 
 </section>
 
 
-<!-- ===== FOOTER ===== -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
     © 2026 أبو فيصل IPTV
-    <br>
-    جميع الحقوق محفوظة
+    • جميع الحقوق محفوظة
 
 </footer>
 
 
+</div>
+
+
+
 <script>
 
-/* ===== نسخ رقم التواصل ===== */
+/* =====================================================
+   COPY NUMBER
+===================================================== */
 
 function copyNumber(){
 
-    const number = "966575242678";
+    const number =
+        "966575242678";
 
-    navigator.clipboard.writeText(number)
-    .then(function(){
+    const message =
+        document.getElementById(
+            "copyMessage"
+        );
 
-        document.getElementById("copyMessage").innerText =
-        "✅ تم نسخ رقم التواصل بنجاح";
 
-    })
-    .catch(function(){
+    if(
+        navigator.clipboard &&
+        window.isSecureContext
+    ){
 
-        /* طريقة بديلة إذا لم يسمح المتصفح بالنسخ */
+        navigator.clipboard
+        .writeText(number)
+        .then(function(){
 
-        const input = document.createElement("input");
+            message.innerText =
+                "✓ تم نسخ رقم التواصل";
 
-        input.value = number;
+        })
+        .catch(function(){
 
-        document.body.appendChild(input);
+            fallbackCopy(number);
 
-        input.select();
+        });
 
-        document.execCommand("copy");
+    }else{
 
-        input.remove();
+        fallbackCopy(number);
 
-        document.getElementById("copyMessage").innerText =
-        "✅ تم نسخ رقم التواصل بنجاح";
+    }
 
-    });
+}
+
+
+/* =====================================================
+   FALLBACK COPY
+===================================================== */
+
+function fallbackCopy(number){
+
+    const input =
+        document.createElement("input");
+
+    input.value = number;
+
+    input.style.position =
+        "fixed";
+
+    input.style.opacity =
+        "0";
+
+    document.body.appendChild(input);
+
+    input.focus();
+
+    input.select();
+
+    input.setSelectionRange(
+        0,
+        99999
+    );
+
+    try{
+
+        document.execCommand(
+            "copy"
+        );
+
+        document.getElementById(
+            "copyMessage"
+        ).innerText =
+            "✓ تم نسخ رقم التواصل";
+
+    }catch(e){
+
+        document.getElementById(
+            "copyMessage"
+        ).innerText =
+            "انسخ الرقم: 966575242678";
+
+    }
+
+    document.body.removeChild(input);
 
 }
 
 </script>
+
 
 </body>
 </html>
